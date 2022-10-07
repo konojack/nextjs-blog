@@ -2,12 +2,13 @@ import Link from 'next/link';
 
 const links = [
   { href: '/', label: 'Menu', id: 1 },
-  { href: '/about', label: 'About', id: 2 }
+  { href: '/about', label: 'About', id: 2 },
+  { href: '/projects', label: 'Projects', id: 3 }
 ];
 
 function Layout({ children }) {
   return (
-    <div className="p-10 font-mono">
+    <div className="p-10 font-mono max-w-4xl mx-auto">
       <nav className="bg-blue-600 p-5 flex justify-center">
         {links.map((link) => {
           return (
