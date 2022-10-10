@@ -13,7 +13,7 @@ function Layout({ children }) {
         {links.map((link) => {
           return (
             <Link href={link.href} key={link.id}>
-              <a className="shadow md:w-40 bg-blue-300 p-2 m-2 text-center hover:bg-gray-400">
+              <a className="shadow md:w-40 bg-blue-300 p-2 m-2 text-center hover:bg-blue-200 transition ease-in duration-300">
                 {link.label}
               </a>
             </Link>
