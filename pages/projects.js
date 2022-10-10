@@ -1,16 +1,15 @@
-import { getList } from 'lib/markdownParser';
+import { getAllProjects } from 'services/projects';
 
 export const getStaticProps = () => {
-  const projects = getList('_projects');
+  const projects = getAllProjects();
   return {
     props: {
-      projects: projects.sort((a, b) => b.createdAt - a.createdAt)
+      projects
     }
   };
 };
 
 const Projects = ({ projects }) => {
-  console.log(projects);
   return (
     <div>
       <h1 className="text-center text-3xl mb-10">Projects</h1>
@@ -50,5 +49,7 @@ const Projects = ({ projects }) => {
     </div>
   );
 };
+
+Projects.title = 'Projects';
 
 export default Projects;
