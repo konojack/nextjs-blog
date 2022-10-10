@@ -4,7 +4,7 @@ export const getStaticProps = () => {
   const projects = getList('_projects');
   return {
     props: {
-      projects
+      projects: projects.sort((a, b) => b.createdAt - a.createdAt)
     }
   };
 };
