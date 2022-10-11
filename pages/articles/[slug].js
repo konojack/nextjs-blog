@@ -27,6 +27,7 @@ export default function Article({ article }) {
     <>
       <Head>
         <title>{article.title}</title>
+        <link href="https://unpkg.com/prismjs@0.0.1/themes/prism-okaidia.css" rel="stylesheet" />
       </Head>
       <div>
         <h1 className="text-center text-3xl mb-10">{article.title}</h1>
