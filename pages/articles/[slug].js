@@ -1,20 +1,19 @@
-import { getFileBySlug, getList } from 'lib/markdownParser';
 import Head from 'next/head';
 import React from 'react';
+import { getAllArticles, getArticle } from 'services/articles';
 
 export const getStaticPaths = async () => {
-  const articles = getList('_articles');
-  const arrayOfParams = articles.map((art) => ({ params: { slug: art.slug } }));
+  const articles = getAllArticles();
 
   return {
-    paths: arrayOfParams,
+    paths: articles.map((art) => ({ params: { slug: art.slug } })),
     fallback: false
   };
 };
 
 export const getStaticProps = async (req) => {
   const { slug } = req.params;
-  const article = await getFileBySlug('_articles', slug);
+  const article = await getArticle(slug);
 
   return {
     props: {

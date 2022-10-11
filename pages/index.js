@@ -1,11 +1,11 @@
-import { getList } from 'lib/markdownParser';
 import Image from 'next/image';
 import Link from 'next/link';
+import { getAllArticles } from 'services/articles';
 
 Home.title = 'Main Page';
 
 export const getStaticProps = () => {
-  const articles = getList('_articles');
+  const articles = getAllArticles();
 
   return {
     props: {
