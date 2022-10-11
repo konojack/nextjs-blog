@@ -1,5 +1,6 @@
 import { getList } from 'lib/markdownParser';
 import Image from 'next/image';
+import Link from 'next/link';
 
 Home.title = 'Main Page';
 
@@ -38,13 +39,13 @@ export default function Home({ articles }) {
             </div>
             <hr className="border-gray-300" />
             <div className="flex flex-wrap items-center flex-1 px-4 py-1 text-center mx-auto">
-              <a href={`/articles/${article.slug}`}>
+              <Link href={`/articles/${article.slug}`}>
                 <a className="hover:underline">
                   <h2 className="text-1xl font-bold tracking-normal text-gray-800">
                     {article.title}
                   </h2>
                 </a>
-              </a>
+              </Link>
             </div>
             <hr className="border-gray-300" />
             <p className="flex flex-row flex-wrap w-full px-4 py-2 overflow-hidden text-sm text-justify text-gray-700">
